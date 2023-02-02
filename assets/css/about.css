@@ -1,0 +1,466 @@
+@font-face {
+    font-family: "Monty Bold";
+    src: local("Monty Bold"),
+      url('../media/fonts/Monty\ Black.otf'),
+      format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Monty Light";
+    src: local("Monty Light"),
+      url('../media/fonts/Monty\ Light.otf'),
+      format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Monty Regular";
+    src: local("Monty Regular"),
+      url('../media/fonts/Monty\ Regular.otf'),
+      format('truetype');
+  }
+  
+  @font-face {
+    font-family: "Monty Black";
+    src: local("Monty Black"),
+      url('../media/fonts/Monty\ Black.otf'),
+      format('truetype');
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: #212121; */
+    background: url(/media/background.png);
+    font-family: sans-serif;
+  }
+  
+  .card {
+    position: fixed;
+    width: 600px;
+    height: 899px;
+    background: #fff;
+    margin: 0 auto;
+    border-radius: 4px;
+    /* transform: rotate(90deg); */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+  }
+  
+  .card:before,
+  .card:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: #fff;
+    transition: 0.5s;
+    z-index: -1;
+  }
+  
+  .card:hover:before {
+    transform: rotate(15deg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .2);
+  }
+  
+  .card:hover:after {
+    transform: rotate(7.5deg);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .2);
+  }
+  
+  .card .imgBx {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    bottom: 10px;
+    right: 10px;
+    background: #222;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  
+  .card:hover .imgBx {
+    bottom: 80px;
+  }
+  
+  .card .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card .details {
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    height: 60px;
+    text-align: center;
+  }
+  
+  .card .details h2 {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #777;
+    text-transform: uppercase;
+  }
+  
+  /* ﮩ٨ـﮩﮩ٨ـ❤ﮩ٨ـﮩﮩ٨ـ  */
+  
+  
+  .card .details h2 span {
+    font-weight: 500;
+    font-size: 16px;
+    color: #f38695;
+    display: block;
+    margin-top: 5px;
+  }
+  
+  i {
+    opacity: 0;
+    font-size: 18px;
+    color: #fff;
+    will-change: transform;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  
+  h2 {
+    pointer-events: none;
+  }
+  
+  
+  .container {
+    width: 100%;
+    height: 101%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+  }
+  
+  .container .card-other {
+    position: relative;
+    width: 600px;
+    height: 900px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 4px;
+  }
+  
+  .container .card-other:before {
+    content: "";
+    z-index: 99;
+    position: absolute;
+    top: -10px;
+    left: 32px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+    background-color: #E6E5E1;
+  }
+  
+  .container .card-other:after {
+    content: "";
+    z-index: 99;
+    position: absolute;
+    bottom: -10px;
+    left: 32px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: #E6E5E1;
+  }
+  
+  .container .card-other ul {
+    z-index: 99;
+    position: absolute;
+    left: 39px;
+    top: 5px;
+    list-style-type: none;
+  }
+  
+  .container .card-other ul li {
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    margin: 6px 0;
+    background-color: #E6E5E1;
+    transform: scale(2);
+  }
+  
+  ul {
+    transform: rotate(90deg) translate(-120px, 9px);
+  }
+  
+  .container .card-other h2 {
+    z-index: 99;
+    font-family: "Poppins";
+    position: absolute;
+    bottom: 0;
+    right: 130px;
+    font-size: 60px;
+    font-weight: 700;
+    color: grey;
+    /* transform: rotate(-90deg); */
+  }
+  
+  .container .card-other .fa-arrow-right {
+    z-index: 100;
+    position: absolute;
+    right: 75px;
+    bottom: 25px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  
+  .container .card-other p {
+    z-index: 99;
+    position: absolute;
+    top: 3px;
+    right: 100px;
+    color: #333;
+    opacity: 0.7;
+    font-size: 12px;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    transform: rotate(-90deg) scale(2.5) translate(-320px, -60px);
+  }
+  
+  .container .card-other .pic {
+    z-index: 100;
+    width: 600px;
+    height: 900px;
+    background-image: url(/media/website\ varun.png);
+    background-size: 100% 100%;
+    filter: grayscale(100%);
+    border-radius: 20px;
+  }
+  
+  .container .card-other .social {
+    position: absolute;
+    left: 60px;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 180px;
+    height: 64px;
+    border-radius: 80px;
+  }
+  
+  .social {
+    transform: translate(-45px, 0px);
+  }
+  
+  .social>.social-btn {
+    padding: 50px 30px;
+  }
+  
+  .container .card-other .social i:nth-of-type(1) {
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+  
+  .container .card-other .social i:nth-of-type(2) {
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  
+  .container .card-other .social i:nth-of-type(3) {
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+  }
+  
+  .container .card-other .social i:nth-of-type(4) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+  
+  .container .card-other:hover i {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  
+  .container .card-other #hover {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
+    /* background-color: #DA4D1D; */
+    background-image: linear-gradient(to top, #fff, #5E9FC2);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    mix-blend-mode: hard-light;
+  }
+  
+  .container .card-other #hover i {
+    font-size: 3rem;
+  }
+  
+  .container .card-other:hover #hover {
+    transform: scale(15.5) translate(-4px, 5px);
+  }
+  
+  .container .card-other:hover p {
+    color: #fff;
+    text-shadow: 4.5px 4.5px 6px grey;
+  
+  }
+  
+  .container .card-other:hover h2 {
+    color: #fff;
+    text-shadow: 4.5px 4.5px 6px grey;
+  }
+  
+  .container .card-other:hover .pic {
+    filter: grayscale(0);
+  }
+  
+  .container .card2-other .pic {
+    background-image: url(/media/website\ dev.png);
+  }
+  
+  .container .card2-other #hover {
+    background-color: #2b26c3;
+  }
+  
+  .dr {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 100px;
+  }
+  
+  .social-btn {
+    background-color: transparent;
+    border: 0px solid transparent;
+  }
+  
+  .social:hover {
+    cursor: pointer;
+  }
+  
+  
+  .card {
+    transform: translate(-115%, 0px) scale(0.55, 0.55);
+  }
+  
+  .card2 {
+    transform: translate(-40%, 0px) scale(0.55, 0.55);
+  }
+  
+  .container .card2-other .pic {
+    background-image: url(/media/website\ dev.png);
+  }
+  
+  .container .card2-other #hover {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
+    /* background-color: #DA4D1D; */
+    background-image: linear-gradient(to top, #fff, #469d89);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    mix-blend-mode: hard-light;
+  }
+  
+  #varun {
+    font-size: 55px;
+    transform: translate(0px, -10px);
+  
+  }
+  
+  .card3 {
+    transform: translate(35%, 0px) scale(0.55, 0.55);
+  }
+  
+  .container .card3-other .pic {
+    background-image: url(/media/website\ varun.png);
+  }
+  
+  .container .card3-other #hover {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
+    /* background-color: #DA4D1D; */
+    background-image: linear-gradient(to top, #fff, #DC7C7D);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    mix-blend-mode: hard-light;
+  }
+  
+  
+  #prachi {
+    transform: translate(0px, -20px);
+    font-size: 50px;
+  }
+  
+  .card4 {
+    transform: translate(110%, 0px) scale(0.55, 0.55);
+  }
+  
+  #hriday {
+    transform: translate(0px, -20px);
+    font-size: 50px;
+  }
+  
+  .container .card4-other #hover {
+    position: absolute;
+    right: 50px;
+    bottom: 60px;
+    width: 60px;
+    height: 60px;
+    /* background-color: #DA4D1D; */
+    background-image: linear-gradient(to top, #fff, #9AAEBB, #374955);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    mix-blend-mode: hard-light;
+  }
+  
+  #bee {
+    font-family: 'Monty Light', sans-serif;
+    transform: translate(0px, -350px);
+    font-size: 50px;
+  }
+  
