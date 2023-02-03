@@ -464,7 +464,7 @@ ul {
 	padding-left: 0px;
 	list-style-position: inside;
 	font-size: 30px;
-	transform: translate(-250px, 0px);
+	transform: translate(-50px, 0px);
 }
 
 ol {
@@ -6348,7 +6348,7 @@ i {
   }
   
   .effect-block span {
-	opacity: 0.3;
+	opacity: 0;
 	/* width: 4000px; */
 	/* transform: scale(2, 2); */
 	-webkit-animation: text-visible 0.0001s linear forwards;
@@ -6451,3 +6451,23 @@ i {
 body {
 	overflow-x: hidden;
 }
+
+/* for images */
+.figure {
+	position: relative;
+	width: 200px; /* can be omitted for a regular non-lazy image */
+	max-width: 100%;
+  }
+  .figure img.image-hover {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	object-fit: contain;
+	opacity: 0;
+	transition: opacity .2s;
+  }
+  .figure:hover img.image-hover {
+	opacity: 1;
+  }

@@ -255,11 +255,11 @@ ul {
     transform: translate(-837px, 0px);
 }
 .item3 {
-    transform: translate(-8px, 0px);
+    transform: translate(9px, 0px);
 }
 
 .item8 {
-  transform: translate(-1000px, 0px);
+  transform: translate(-979px, 0px);
 }
 
 
@@ -273,12 +273,16 @@ ul {
 }
 
 .item4 {
-  transform: translate(200px, 0px);
+  transform: translate(210px, 0px);
 }
 
 .item9 {
-  transform: translate(-200px, 0px);
+  transform: translate(-248px, 0px);
 }
 .item5 {
-  transform: translate(-415px, 0px);
+  transform: translate(-450px, 0px);
+}
+
+.item6 {
+  transform: translate(-52px, 0px);
 }
